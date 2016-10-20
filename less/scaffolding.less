@@ -1,0 +1,47 @@
+html, body
+{
+  width: 100%;
+  height: 100%;
+}
+
+main
+{
+  margin: auto;
+}
+
+h1
+{
+  font-size: @font-size-large;
+
+  [class^="icon-"],
+  [class*=" icon-"]
+  {
+    font-size: @font-size-large;
+  }
+}
+
+[class^="icon-"],
+[class*=" icon-"]
+{
+  font-size: @icon-font-size;
+}
+
+.cover
+{
+  display: table;
+  height: 100%;
+  padding: @spacing-large;
+  width: 100%;
+}
+
+.cover-content-wrapper
+{
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.cover-content
+{
+  margin: auto;
+  max-width: 60.0rem;
+}

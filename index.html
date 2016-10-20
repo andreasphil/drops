@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Drops</title>
+		<meta charset="utf-8"></meta>
+		<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"></meta>
+		<meta content="" name="description"></meta>
+		<meta content="" name="keywords"></meta>
+		<meta content="" name="author"></meta>
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<link rel="apple-touch-icon" href="img/small.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="img/small.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="img/medium.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="img/large.png">
+
+		<link rel="stylesheet" type="text/css" href="components/jqcloud2/dist/jqcloud.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="shortcut icon" type="image/png" href="img/favicon.png">
+	</head>
+
+	<body class="cover">
+
+		<div class="cover-content-wrapper">
+			<main id="application" class="cover-content">
+				<div v-bind:is="currentView"
+					v-bind:score="score"
+					v-bind:items="items"
+					v-bind:prompts="prompts">
+				</div>
+			</main>
+		</div>
+
+		<!-- Landing template -->
+		<script type="text/template" id="landing-template">
+			<div class="landing">
+				<h1><i class="icon-drop"></i></h1>
+				<p>Hi! Did you know that one in ten people on this planet <a href="http://water.org/water-crisis/water-sanitation-facts/" target="_blank">lack access to clean water</a>? That's why you can consider yourself lucky if you do.</p>
+				<p>Water is wealth, just like all the other small things in our lives that we often don't even notice.</p>
+				<p>Imagine them as drops in a glass of water. Is it half full or half empty? We can't decide that for you, but we can encourage you to fill it up by appreciating all the great things you have in your life – one drop at a time.</p>
+				<div class="button-bar">
+					<button v-on:click="close">Get started!</button>
+				</div>
+			</div>
+		</script>
+
+		<!-- Home template -->
+		<script type="text/template" id="home-template">
+			<div class="home">
+				<gratitude-prompt v-bind:prompts="prompts"></gratitude-prompt>
+				<glass v-bind:score="score"
+					v-bind:items="items">
+				</glass>
+				
+				<a class="footer"
+					href="#"
+					v-on:click.prevent="oceanVisible = true">
+					<i class="icon-arrow-down"></i>
+				</a>
+
+				<ocean v-bind:visible="oceanVisible"
+					v-on:close="oceanVisible = false"
+					v-bind:items="items"
+					v-bind:prompts="prompts">
+				</ocean>
+			</div>
+		</script>
+
+		<!-- Gratitude prompt template -->
+		<script type="text/template" id="gratitude-prompt-template">
+			<div>
+				<div class="gratitude-prompt">
+					<select v-model="currentPrompt">
+						<option v-for="prompt in prompts"
+							v-bind:value="prompt.category">{{ prompt.text }}</option>
+					</select>
+				</div>
+				<input type="text" 
+					class="gratitude-input"
+					v-model.trim="inputValue"
+					v-on:keyup.enter.prevent="submit">
+				</div>
+			</div>
+		</script>
+
+		<!-- Glass template -->
+		<script type="text/template" id="glass-template">
+			<div class="glass-wrapper">
+				<transition name="drop">
+					<div class="drop" 
+						v-show="dropping">
+					</div>
+				</transition>
+				<div class="glass">
+					<div class="water-wrapper">
+						<div class="water" 
+							v-bind:style="{ height: score }">	
+						</div>
+					</div>
+				</div>
+			</div>
+		</script>
+
+		<!-- Ocean template -->
+		<script type="text/template" id="ocean-template">
+			<transition name="slide-up">
+				<div class="ocean" 
+					v-show="visible">
+					<h1><i class="icon-heart"></i></h1>
+					<p v-if="(sortedItems.length >= 5)">
+						Hi! Good to see you're {{ topCategory }}. How about {{ bottomCategory }} next?
+					</p>
+					<ul class="gratitude-list">
+						<li v-if="sortedItems.length === 0" class="empty-list-item">
+							There's nothing here yet!
+						</li>
+						<li v-for="item in sortedItems">
+							<a href="#"
+								v-on:click.prevent="removeItem(item.text)"><i class="icon-cross"></i></a>
+							{{ item.category }}: {{ item.text }}
+							<span class="float-right">
+								{{ item.count }}
+							</span>
+						</li>
+					</ul>
+					<a class="footer"
+						href="#"
+						v-on:click.prevent="close">
+						<i class="icon-cross"></i>
+					</a>
+				</div>
+			</transition>
+		</script>
+
+		<!-- Libraries -->
+		<script type="text/javascript" src="components/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="components/underscore/underscore-min.js"></script>
+		<script type="text/javascript" src="components/jqcloud2/dist/jqcloud.js"></script>
+		<script type="text/javascript" src="components/vue/dist/vue.js"></script>
+
+		<!-- Models -->
+		<script type="text/javascript" src="js/models/gratitudeItem.js"></script>
+		<script type="text/javascript" src="js/models/gratitudePrompt.js"></script>
+
+		<!-- Components -->
+		<script type="text/javascript" src="js/components/gratitudePrompt.js"></script>
+		<script type="text/javascript" src="js/components/glass.js"></script>
+		<script type="text/javascript" src="js/components/ocean.js"></script>
+
+		<!-- Views -->
+		<script type="text/javascript" src="js/views/landing.js"></script>
+		<script type="text/javascript" src="js/views/home.js"></script>
+
+		<!-- Utils -->
+		<script type="text/javascript" src="js/utils/persistence.js"></script>
+		<script type="text/javascript" src="js/utils/settings.js"></script>
+
+		<!-- Application -->
+		<script type="text/javascript" src="js/startup.js"></script>
+	</body>
+</html>

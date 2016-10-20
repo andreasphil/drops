@@ -1,0 +1,107 @@
+.home
+{
+  text-align: center;
+}
+
+.footer
+{
+  background-color: @primary-dark;
+  bottom: 0;
+  color: #FFFFFF;
+  left: 0;
+  padding: @spacing-normal;
+  position: fixed;
+  text-align: center;
+  text-decoration: none;
+  transition: @transition-duration @transition-effect;
+  width: 100%;
+
+  &:hover
+  {
+    background-color: @primary-light;
+    color: #FFFFFF;
+  }
+}
+
+.gratitude-prompt select
+{
+  -webkit-appearance: none;
+  appearance: none;
+  background: darken(@base-light, 5%)
+              url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAUCAMAAACzvE1FAAAADFBMVEUzMzMzMzMzMzMzMzMKAG/3AAAAA3RSTlMAf4C/aSLHAAAAPElEQVR42q3NMQ4AIAgEQTn//2cLdRKppSGzBYwzVXvznNWs8C58CiussPJj8h6NwgorrKRdTvuV9v16Afn0AYFOB7aYAAAAAElFTkSuQmCC) no-repeat right 1.5rem center / .8rem 1rem;
+  border: none;
+  color: @base-dark;
+  font-size: @font-size-base;
+  margin: @spacing-normal 0;
+  outline: 0;
+  padding: @spacing-normal;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.gratitude-input
+{
+  background-color: transparent;
+  border-color: @base-dark;
+  border-radius: 0;
+  border-style: solid;
+  border-width: 0 0 0.2rem 0;
+  color: @primary-dark;
+  font-size: @font-size-large;
+  outline: none;
+  padding: @spacing-small;
+  resize: none;
+  text-align: center;
+  transition: border-color @transition-duration @transition-effect;
+  width: 100%;
+
+  &:focus
+  {
+    border-color: @primary-dark;
+  }
+}
+
+.glass-wrapper
+{
+  position: relative;
+}
+
+.drop
+{
+  position: absolute;
+  top: -5.0rem;
+  left: 48%;
+  background-color: @primary-light;
+  width: 3.0rem;
+  height: 3.0rem;
+  z-index: 100;
+  border-radius: 1.5rem;
+}
+
+.glass
+{
+  background-color: darken(@base-light, 5%);
+  border-radius: 0.5rem 0.5rem 4.0rem 4.0rem;
+  display: table;
+  height: 30.0rem;
+  margin: (@spacing-large * 2) auto;
+  padding: @spacing-small;
+  position: relative;
+  width: 20.0rem;
+}
+
+.water-wrapper
+{
+  display: table-cell;
+  vertical-align: bottom;
+}
+
+.water
+{
+  background: linear-gradient(to bottom, @primary-light, @primary-dark);
+  border-radius: 0rem 0rem 4.0rem 4.0rem;
+  height: 55%;
+  width: 100%;
+  transition: height @transition-duration @transition-effect;
+}

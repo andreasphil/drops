@@ -1,0 +1,14 @@
+{
+  "name": "feather",
+  "homepage": "https://github.com/anphil/feather",
+  "_release": "1ad2bf59fe",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "1ad2bf59feedb809a677f5ed0dd9eab4597c8bd9"
+  },
+  "_source": "https://github.com/anphil/feather.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/anphil/feather.git",
+  "_direct": true
+}
