@@ -1,0 +1,21 @@
+{
+  "name": "drops",
+  "description": "Drops is a simple gratitude log. Is your glass half full or half empty?",
+  "main": "gulpfile.js",
+  "authors": [
+    "Andreas Philippi"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "vue": "^2.0.3",
+    "feather": "https://github.com/anphil/feather.git",
+    "jqcloud2": "^2.0.2",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "spectre.css": "^0.1.26"
+  }
+}

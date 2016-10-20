@@ -1,0 +1,51 @@
+.landing
+{
+  text-align: center;
+
+  .button-bar
+  {
+    margin: (@spacing-large * 2) 0;
+  }
+
+  h1
+  {
+    margin-bottom: (@spacing-large);
+    color: @primary-dark;
+  }
+
+  p
+  {
+    line-height: 1.5em;
+    font-size: (@font-size-base * 0.9);
+  }
+
+  a
+  {
+    color: lighten(@base-dark, 20%);
+
+    &:hover
+    {
+      color: lighten(@base-dark, 30%);
+    }
+  }
+
+  button
+  {
+    padding: @spacing-small @spacing-normal;
+    background-color: transparent;
+    color: @primary-dark;
+    border-color: @primary-dark;
+    border-style: solid;
+    border-radius: 1.0rem;
+    border-width: 0.2rem;
+    margin: auto;
+    transition: background-color @transition-duration @transition-effect,
+                color @transition-duration @transition-effect;
+
+    &:hover
+    {
+      background-color: @primary-dark;
+      color: #FFFFFF;
+    }
+  }
+}
