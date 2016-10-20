@@ -134,7 +134,7 @@
       var lastDate = new Date(this.settings.lastEdit);
       var currentDate = new Date();
       var timespan = (currentDate - lastDate) / (1000 * 60 * 60);
-      this.settings.scoreMalus += 5 * Math.floor(timespan / 6);
+      this.settings.scoreMalus += 5 * Math.floor(timespan / 12);
     }
   });
 })(window);

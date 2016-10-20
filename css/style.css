@@ -1543,6 +1543,16 @@ h1 [class*=" icon-"] {
 .home {
   text-align: center;
 }
+.link-bar {
+  background-color: rgba(43, 74, 107, 0.05);
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1.5rem;
+  width: 100%;
+  font-size: 1.44rem;
+}
 .footer {
   background-color: #2AA9E8;
   bottom: 0;
