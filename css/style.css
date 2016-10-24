@@ -1553,6 +1553,12 @@ h1 [class*=" icon-"] {
   width: 100%;
   font-size: 1.44rem;
 }
+.important-link {
+  color: #DB556A;
+}
+.important-link:hover {
+  color: #d12c46;
+}
 .footer {
   background-color: #2AA9E8;
   bottom: 0;
