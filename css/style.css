@@ -1540,6 +1540,14 @@ h1 [class*=" icon-"] {
   background-color: #2AA9E8;
   color: #FFFFFF;
 }
+.test-end h1,
+.test-end a {
+  color: #DB556A;
+}
+.test-end h1:hover,
+.test-end a:hover {
+  color: #DB556A;
+}
 .home {
   text-align: center;
 }
