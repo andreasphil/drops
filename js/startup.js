@@ -128,8 +128,8 @@
       this.prompts.push(new GratitudePrompt('What are you grateful for today?', 'Other', 'having so much to be grateful for', 'appreciating something your\'re grateful for'));
     
       // Apply settings
-      // this.currentView = (this.settings.firstUse === true) ? views.landing : views.home;
-      this.currentView = views.testEnd;
+      this.currentView = (this.settings.firstUse === true) ? views.landing : views.home;
+      // this.currentView = views.testEnd;
 
       // Calculate malus
       var lastDate = new Date(this.settings.lastEdit);
